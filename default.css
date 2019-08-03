@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::after {
+    box-sizing: border-box
+}
+
+*::before {
+    box-sizing: border-box
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.code-wrapper {
+    flex: 3;
+    height: 30%;
+    border: 1px solid green;
+}
+
+.preview-wrapper {
+    flex: 7;
+    height: 70%;
+    border: 1px solid blue;
+}
+
+#code {
+    overflow: hidden;
+    height: 100%;
+}
