@@ -10,13 +10,6 @@ var result = `
     transition:all 1s;
 }
 
-/* 设置一个背景色 
-html{
-    background: rgb(222,222,222);
-    font-size:16px;
-}
-*/
-
 /*加一个边框吧*/
 #code{
     border:1px solid black;
