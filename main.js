@@ -1,6 +1,6 @@
 var result = `
 /*
- * Hello 大家好 我是居居
+ * Hello 大家好 我是秀强
  * 下面我将以动画的形式来画一个皮卡丘
  * 让我们开始吧
  */
@@ -15,7 +15,7 @@ var result = `
     border:1px solid black;
     padding:16px
 }
-
+/*增加一个背景*/
 .preview {
     height: 100%;
     border: 1px solid greed;
@@ -30,7 +30,7 @@ var result = `
     height: 100%;
     width: 900px;
 }
-
+/*皮卡丘的眼睛*/
 .eye {
     position: absolute;
     height: 120px;
