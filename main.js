@@ -75,8 +75,7 @@
     padding:16px
 }
 
-/*增加一个背景*/
-
+/*皮卡丘要来啦*/
 .preview {
     height: 100%;
     border: 1px solid greed;
@@ -88,7 +87,6 @@
 
 .wrapper {
     position: relative;
-    /* height: 100%; */
     height: 165px;
     width: 100%;
 }
@@ -104,7 +102,7 @@
     border-radius: 50%;
     border: 2px solid #000000;
 }
-
+/* 皮卡丘的眼珠子 */
 .eye:after {
     content: '';
     display: block;
@@ -127,7 +125,7 @@
     left: 50%;
     margin-left: 90px;
 }
-
+/* 皮卡丘脸颊 */
 .cheek {
     position: absolute;
     height: 68px;
@@ -147,7 +145,7 @@
     left: 50%;
     margin-left: 116px;
 }
-
+/* 皮卡丘的鼻子 */
 .nose {
     position: absolute;
     height: 0px;
@@ -160,7 +158,7 @@
     top: 28px;
     margin-left: -12px;
 }
-
+/* 皮卡丘的上嘴唇 */
 .upperLip {
     height: 25px;
     width: 80px;
@@ -185,7 +183,7 @@
     border-bottom-right-radius: 40px 25px;
     transform: rotate(20deg)
 }
-
+/* 皮卡丘的下嘴唇 */
 .lowerLip-warpper {
     position: absolute;
     bottom: -30px;
@@ -214,7 +212,7 @@
     width: 100px;
     height: 100px;
     bottom: 0;
-    background: #FC4A62;
+    background: #FC0D1C;
     left: 50%;
     margin-left: -50px;
     border-radius: 50px
