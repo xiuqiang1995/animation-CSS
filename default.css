@@ -19,13 +19,13 @@ body {
 }
 
 .code-wrapper {
-    flex: 3;
-    height: 30%;
+    flex: 1;
+    height: 50%
 }
 
 .preview-wrapper {
-    flex: 7;
-    height: 70%;
+    flex: 1;
+    height: 50%
 }
 
 #code {
