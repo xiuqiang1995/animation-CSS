@@ -202,6 +202,10 @@
                 let styleTag = document.querySelector('#styleTag');
                 container.innerHTML = Prism.highlight(result, Prism.languages.css);
                 styleTag.innerHTML = result
+                break;
+            case 'refresh':
+                location.reload();
+                break;
         }
     })
 
