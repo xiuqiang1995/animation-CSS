@@ -1,60 +1,22 @@
-// var n = 0;
-// var id = setInterval(() => {
-//     n++;
-//     //代码高亮
-//     code.innerHTML = Prism.highlight(result.substring(0, n), Prism.languages.css);
-//     styleTag.innerHTML = result.substring(0, n)
-//     code.scrollTop = code.scrollHeight;
-//     if (n >= result.length) {
-//         window.clearInterval(id)
-//             //fn2(result);
-//     }
-// }, 10)
-
-
-
-
-// function fn2(preResult) {
-//     var paper = document.createElement('div');
-//     paper.id = 'paper';
-//     document.body.appendChild(paper);
-
-//     var result = `
-// #paper{
-//     width:100px;height:100px;
-//     background:red;
-// }
-// `
-//     var n = 0;
-//     var id = setInterval(() => {
-//         n = n + 1;
-//         code.innerHTML = Prism.highlight(preResult + result.substring(0, n), Prism.languages.css);
-
-//         styleTag.innerHTML = styleTag.innerHTML + result[n - 1]
-//         if (n >= result.length) {
-//             window.clearInterval(id)
-//         }
-//     }, 10)
-// }
-
 ! function() {
+    var duration = 50;
+    let id;
+
     function writeCode(pre, result, fn) {
         let container = document.querySelector('#code');
         let styleTag = document.querySelector('#styleTag');
-        console.log(1)
         let n = 0;
-        let id = setInterval(() => {
+        id = setTimeout(function run() {
             n += 1;
-            //代码高亮
             container.innerHTML = Prism.highlight(result.substring(0, n), Prism.languages.css);
             styleTag.innerHTML = result.substring(0, n)
             container.scrollTop = container.scrollHeight;
-            if (n >= result.length) {
-                window.clearInterval(id)
-                    //若传了回调函数，则调用
-                fn && fn()
+            if (n < result.length) {
+                id = setTimeout(run, duration)
+            } else {
+                fn && fn.call()
             }
-        }, 10)
+        }, duration)
     }
 
     var result = `
@@ -217,7 +179,30 @@
     margin-left: -50px;
     border-radius: 50px
 }
+/* 好了，这只pikachu送给你 */
 `
     writeCode('', result)
+    $('.actions').on('click', 'button', function(e) {
+        let $btn = $(e.currentTarget);
+        let speed = $btn.attr('data-speed');
+        $btn.addClass('active').siblings('.active').removeClass('active')
+        switch (speed) {
+            case 'slow':
+                duration = 100
+                break
+            case 'normal':
+                duration = 50
+                break
+            case 'fast':
+                duration = 10
+                break
+            case 'skip':
+                window.clearTimeout(id)
+                let container = document.querySelector('#code');
+                let styleTag = document.querySelector('#styleTag');
+                container.innerHTML = Prism.highlight(result, Prism.languages.css);
+                styleTag.innerHTML = result
+        }
+    })
 
 }.call()
